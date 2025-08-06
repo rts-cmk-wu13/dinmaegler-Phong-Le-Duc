@@ -1,6 +1,6 @@
-export default function LoginBtn() {
+// export default function LoginBtn() {
 
-    return (
-        <button>log ind</button>
-    )
-}
+//     return (
+//         <button>log ind</button>
+//     )
+// }

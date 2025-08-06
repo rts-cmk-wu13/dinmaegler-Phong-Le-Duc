@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import homeIcon from "../assets/home_din_maegler.svg"; // Adjust path if needed
+import homeIcon from "/src/assets/home_din_maegler.svg";
 
 export default function Navbar() {
 

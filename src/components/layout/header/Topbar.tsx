@@ -1,6 +1,6 @@
-import mailto from "../assets/mail_icon.svg"
-import phoneIcon from "../assets/phone_icon.svg";
-import loginIcon from "../assets/login_icon.svg";
+import mailto from "/src/assets/mail_icon.svg"
+import phoneIcon from "/src/assets/phone_icon.svg";
+import loginIcon from "/src/assets/login_icon.svg";
 
 export default function Topbar() {
     return (
