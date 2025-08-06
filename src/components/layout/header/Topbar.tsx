@@ -9,7 +9,7 @@ export default function Topbar() {
 
                 <a
                     href="mailto:4000@dinmaegler.com"
-                    className="flex items-center text-white hover:underline flex"
+                    className="flex items-center text-white hover:underline"
                 >
                     <img src={mailto} alt="Home" className="w-5 h-5 mr-1" />
                     4000@dinmaegler.com
