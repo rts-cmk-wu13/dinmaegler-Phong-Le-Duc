@@ -5,26 +5,28 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="flex border-b shadow p-5" >
+            <div className=" border-b p-5 " >
+                <div className="header-width flex items-center justify-between gap-4">
 
-                <Link to="/" >
-                    <img src={homeIcon} alt="Home" className="w-45 mr-1" />
-                </Link>
+                    <Link to="/" >
+                        <img src={homeIcon} alt="Home" className="w-45 mr-1" />
+                    </Link>
 
-                <ul className="flex items-center space-x-4 bg-dinmaegler-white ml-auto">
-                    <li>
-                        <Link to="/list-homes">Boliger til salg</Link>
-                    </li>
-                    <li>
-                        <Link to="/list-Maeglere">Mæglere</Link>
-                    </li>
-                    <li>
-                        <Link to="/favorite-homes">Mine favoritter</Link>
-                    </li>
-                    <li>
-                        <Link to="/Contact">Kontakt os</Link>
-                    </li>
-                </ul>
+                    <ul className="flex items-center space-x-4 bg-dinmaegler-white ml-auto">
+                        <li>
+                            <Link to="/list-homes">Boliger til salg</Link>
+                        </li>
+                        <li>
+                            <Link to="/list-Maeglere">Mæglere</Link>
+                        </li>
+                        <li>
+                            <Link to="/favorite-homes">Mine favoritter</Link>
+                        </li>
+                        <li>
+                            <Link to="/Contact">Kontakt os</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </>
     )

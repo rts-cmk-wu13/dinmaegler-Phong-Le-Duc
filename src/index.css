@@ -2,8 +2,37 @@
 
 @theme {
   --color-dinmaegler-blue: #162A41;
+  --color-dinmaegler-blue-light: #EEF7FF;
   --color-dinmaegler-white: #FFFFFF;
+  --color-dinmaegler-grey: #F8F8FB;
+
+  
 }
+
+@utility content-width {
+  @apply max-w-[1000px] container mx-auto;
+  
+}
+@utility header-width {
+  @apply max-w-[1300px] container mx-auto;
+  
+}
+
+@utility h1 {
+  @apply text-3xl font-bold;
+  
+}
+@utility h2 {
+  @apply text-2xl font-bold;
+  
+}
+@utility h3 {
+  @apply text-xl font-bold;
+  
+}
+
+
+
 
 /* 
 
