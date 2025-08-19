@@ -1,4 +1,5 @@
 import Headline from "../components/layout/Headline";
+import AgentListSection from "../components/sections/AgentListSection";
 
 
 export default function ListMaeglere() {
@@ -7,6 +8,7 @@ export default function ListMaeglere() {
         <>
             <Headline headlineText="Mægler liste" />
            
+           <AgentListSection />
         </>
     )
 }

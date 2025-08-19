@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import ListBolig from "./pages/ListBolig";
@@ -8,6 +8,9 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { HomeLoader } from "./Loaders/HomeLoader";
+import { HouseLoader } from "./Loaders/HouseLoader";
+import { AgentLoader } from "./Loaders/AgentLoader";
 
 const router = createBrowserRouter([
     {
@@ -16,15 +19,19 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home />
+                element: <Home />,
+                loader: HomeLoader
+
             },
             {
                 path: 'list-homes',
-                element: <ListBolig />
+                element: <ListBolig />,
+                loader: HouseLoader
             },
             {
                 path: 'list-maeglere',
-                element: <ListMaeglere />
+                element: <ListMaeglere />,
+                loader: AgentLoader
             },
             {
                 path: 'favorite-homes',

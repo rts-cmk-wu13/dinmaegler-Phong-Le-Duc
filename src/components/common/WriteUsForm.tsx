@@ -1,9 +1,9 @@
-export default function NewsletterForm() {
+export default function WriteUsForm() {
 
     return (
         <>
-            {/* NEWSLETTER FORMULAR */}
-            <div className="border border-gray-300 p-10 rounded-[3px] shadow-md max-w-lg  my-15">
+            {/* Write us FORMULAR */}
+            <div className="border border-gray-300 p-10 rounded-[3px] shadow-md max-w-lg">
 
                 <form className="login-form flex flex-col gap-4">
 

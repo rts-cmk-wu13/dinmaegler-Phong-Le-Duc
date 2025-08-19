@@ -51,7 +51,7 @@ export default function RegisterForm() {
                             Opret bruger
                         </button>
                     </form>
-               
+
                 </div>
             </div>
         </>

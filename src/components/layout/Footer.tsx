@@ -5,9 +5,9 @@ export default function Footer() {
 
     return (
         <>
-        <footer className="bg-dinmaegler-grey ">
-            <div className="full-width p-5">
-                <div className="max-w-[500px]">
+        <footer className="bg-dinmaegler-grey flex flex-col items-center">
+            <div className="p-5 flex flex-col ">
+                <div className="max-w-[500px] ">
                     <Link to="/" >
                         <img src={homeIcon} alt="Home" className="w-45 mr-1" />
                     </Link>
@@ -76,10 +76,10 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-dinmaegler-blue">
+            </div>
+                <div className="bg-dinmaegler-blue w-full">
                     <p className="text-white text-center p-5">Layout By Jit Banik 2020</p>
                 </div>
-            </div>
             </footer>
         </>
     )
