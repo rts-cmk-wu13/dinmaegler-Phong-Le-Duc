@@ -16,6 +16,7 @@ export default function NewsletterSection() {
                     <h3 className="h3 text-white text-center">Tilmeld dig vores nyhedsbrev og <br />
                         hold dig opdateret på boligmarkedet</h3>
                 </div>
+                
                 <Newsletter />
 
             </div>

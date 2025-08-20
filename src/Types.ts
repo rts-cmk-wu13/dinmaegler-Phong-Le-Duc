@@ -1,40 +1,50 @@
 
 export type Agent = {
-    id: string | number;
+  id: string | number;
+  name: string;
+  email: string;
+  phone: string | number;
+  image?: {
     name: string;
-    email: string;
-    phone: string | number;
-    image?: {
-        name: string;
-        size: number;
-        url: string;
-    };
-    title?: string;
-    description?: string;
+    size: number;
+    url: string;
+  };
+  title?: string;
+  description?: string;
 }
 
 export type House = {
-    id: string | number;
-    adress1: string; // Note: likely "address" not "adress1"
-    city: string;
-    price: number;
-    rooms: number;
-    size: number;
-    energylabel: string;
-    type: string;
-    description?: string;
-    images?: Image[];
-    // Add other properties you see in the API response
+  id: string | number;
+  adress1: string; // Note: likely "address" not "adress1"
+  city: string;
+  price: number;
+  rooms: number;
+  size: number;
+  energylabel: string;
+  type: string;
+  description?: string;
+  images?: Image[];
+  postalcode: number
+  lotsize: number
+  livingspace: number
+  basementsize: number;
+  built: number;
+  remodel: number
+  payment: number
+  gross: number
+  netto: number
+  cost: number
+  // Add other properties you see in the API response
 
 }
 
 export type Image = {
-    url: string;
-    width: number;
-    height: number;
-    id: string;
-    name: string;
-    size: number;
+  url: string;
+  width: number;
+  height: number;
+  id: string;
+  name: string;
+  size: number;
 }
 
 
@@ -51,7 +61,7 @@ export interface Property {
   basementsize: number
   lotsize: number
   netto: number
-  postalcode: number
+
   adress1: string
   adress2: string
   description: string
@@ -62,7 +72,7 @@ export interface Property {
   rooms: string
   floors?: number
   basement?: string
-//   floorplan: PropertyImage
+  //   floorplan: PropertyImage
   lat: number
   long: number
   users: any[]

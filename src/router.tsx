@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 import ListBolig from "./pages/ListBolig";
+import DetailBolig from "./pages/DetailBolig";
 import ListMaeglere from "./pages/ListMaeglere";
 import FavoriteHomes from "./pages/FavoriteHomes";
 import Contact from "./pages/Contact";
@@ -11,6 +12,7 @@ import Register from "./pages/Register";
 import { HomeLoader } from "./Loaders/HomeLoader";
 import { HouseLoader } from "./Loaders/HouseLoader";
 import { AgentLoader } from "./Loaders/AgentLoader";
+import { HouseDetailLoader } from "./Loaders/HouseDetailLoader";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,12 @@ const router = createBrowserRouter([
                 element: <ListBolig />,
                 loader: HouseLoader
             },
+            {
+                path: 'detail-homes/:id',
+                element: <DetailBolig />,
+                loader: HouseDetailLoader
+            },
+
             {
                 path: 'list-maeglere',
                 element: <ListMaeglere />,
