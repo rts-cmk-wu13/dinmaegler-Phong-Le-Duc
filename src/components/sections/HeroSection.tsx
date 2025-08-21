@@ -19,7 +19,7 @@ export default function HeroSection() {
 
                     <div className="flex gap-2">
                         <input
-                            type="text"
+                            type="search"
                             placeholder="Hvad skal din næste bolig indeholde"
                             className="p-2 rounded border border-gray-300 min-w-[300px] max-w-[600px] w-full"
                         />

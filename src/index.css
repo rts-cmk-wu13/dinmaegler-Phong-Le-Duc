@@ -34,8 +34,14 @@
 
 }
 
+.img-black {
+  filter: brightness(0) saturate(100%) invert(0);
+}
 
-
+.gallery-modal::backdrop {
+  backdrop-filter: blur(100px);
+  background: rgba(0,0,0,0.8);
+}
 
 /* 
 

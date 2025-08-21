@@ -34,6 +34,7 @@ export type House = {
   gross: number
   netto: number
   cost: number
+  agent: Agent
   // Add other properties you see in the API response
 
 }

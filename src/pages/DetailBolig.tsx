@@ -1,4 +1,4 @@
-import Headline from "../components/layout/Headline"
+
 // import HouseCard from "../components/common/HouseCard"
 import HouseDetail from "../components/common/HouseDetail"
 import { useLoaderData } from "react-router"
@@ -10,7 +10,7 @@ export default function DetailBolig() {
 
     return (
         <>
-            <Headline headlineText="Bolig detail" />
+            {/* <Headline headlineText="Bolig detail" /> */}
             <HouseDetail house={house} />
         </>
     )
