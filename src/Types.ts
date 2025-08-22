@@ -35,9 +35,17 @@ export type House = {
   netto: number
   cost: number
   agent: Agent
+    floorplan : Floorplan
   // Add other properties you see in the API response
 
 }
+
+export type Floorplan={
+  width: number;
+  height: number;
+  url: string;
+}
+
 
 export type Image = {
   url: string;

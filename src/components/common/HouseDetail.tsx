@@ -15,11 +15,14 @@ type HouseCardProps = {
 export default function HouseDetail({ house }: HouseCardProps) {
 
     const [searchParams] = useSearchParams();
-    const showGallery = searchParams.get("gallery") === "true";
+    const showGallery = searchParams.get("modal") === "galleri";
+    const showPlan = searchParams.get("modal") === "plantegning";
+    const showMap = searchParams.get("modal") === "kort";
+
     const dialogRef = useRef<HTMLDialogElement>(null); //react querySelector
 
 
-    
+
 
     console.log("Full house object:", house);
     console.log("House images array:", house.images);
@@ -46,11 +49,15 @@ export default function HouseDetail({ house }: HouseCardProps) {
                         </div>
 
                         <div className="flex gap-4">
-                            <Link to="?gallery=true">
+                            <Link to="?modal=galleri">
                                 <img src={gallery_icon} className="w-10 h-10" alt="Gallery" />
                             </Link>
-                            <img src={plantegning_icon} className="w-10 h-10" alt="Plantegning" />
-                            <img src={map_icon} className="w-10 h-10" alt="lokation" />
+                            <Link to="?modal=plantegning">
+                                <img src={plantegning_icon} className="w-10 h-10" alt="Plantegning" />
+                            </Link>
+                            <Link to="?modal=kort">
+                                <img src={map_icon} className="w-10 h-10" alt="lokation" />
+                            </Link>
                             <img src={favorite_icon} className="w-10 h-10" alt="Favorite" />
                         </div>
 
@@ -106,7 +113,7 @@ export default function HouseDetail({ house }: HouseCardProps) {
 
                     </div>
 
-                    <section className="grid grid-cols-2 content-width gap-4">
+                    <section className="grid grid-cols-2 content-width gap-4 mb-10">
 
                         <h3 className="font-bold">Beskrivelse</h3>
                         <h3 className="font-bold">Ansvarlig mægler</h3>
@@ -114,7 +121,7 @@ export default function HouseDetail({ house }: HouseCardProps) {
                             <p>{house.description}</p>
                         </div>
 
-                        <div className="flex border border-gray-300 p-4 items-center gap-6 h-60">
+                        <div className="flex border border-gray-300 p-4 items-center gap-6 h-40">
                             <div>
 
 
@@ -125,7 +132,7 @@ export default function HouseDetail({ house }: HouseCardProps) {
                                             "/images/placeholder.jpg"
                                         }
                                         alt={house.agent?.name || "Agent"}
-                                        className="w-40 h-40 object-cover border border-gray-300"
+                                        className="w-30 h-30 object-cover border border-gray-300"
                                     />
                                 </figure>
                             </div>
@@ -154,15 +161,19 @@ export default function HouseDetail({ house }: HouseCardProps) {
             </article >
 
 
-         <GalleryHouse
-            dialogRef={dialogRef}
-            gallery_icon={gallery_icon}
-            plantegning_icon={plantegning_icon}
-            map_icon={map_icon}
-            favorite_icon={favorite_icon}
-            showGallery={showGallery}
-            house={house}
-         />
+            <GalleryHouse
+                dialogRef={dialogRef}
+                gallery_icon={gallery_icon}
+                plantegning_icon={plantegning_icon}
+                map_icon={map_icon}
+                favorite_icon={favorite_icon}
+                showGallery={showGallery}
+                showPlan={showPlan}
+                showMap={showMap}
+                house={house}
+                
+               
+            />
 
         </>
     )

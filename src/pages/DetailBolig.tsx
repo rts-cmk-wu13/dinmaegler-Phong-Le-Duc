@@ -3,6 +3,7 @@
 import HouseDetail from "../components/common/HouseDetail"
 import { useLoaderData } from "react-router"
 import { type House } from "../Types"
+import "../components/common/flickity.css"
 
 export default function DetailBolig() {
     const { house } = useLoaderData() as { house: House };

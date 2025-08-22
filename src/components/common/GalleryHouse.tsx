@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
-import { type House } from "../../Types";
 import { Link } from "react-router";
+import type { House } from "../../Types";
+import { useNavigate } from "react-router";
+import FlickityTest from "./FlickityTest";
+
 
 type GalleryHouseProps = {
     dialogRef: React.RefObject<HTMLDialogElement | null>;
@@ -9,41 +12,74 @@ type GalleryHouseProps = {
     map_icon: string;
     favorite_icon: string;
     showGallery: boolean;
+    showPlan: boolean;
+    showMap: boolean;
     house: House;
+
 };
 
-export default function GalleryHouse({ dialogRef, showGallery, house, gallery_icon, plantegning_icon, map_icon, favorite_icon }: GalleryHouseProps) {
+
+
+export default function GalleryHouse({
+    dialogRef,
+    showGallery,
+    showPlan,
+    showMap,
+    gallery_icon,
+    plantegning_icon,
+    map_icon,
+    favorite_icon,
+    house
+
+}: GalleryHouseProps) {
+
+    const navigate = useNavigate();
+
     useEffect(() => {
-        if (showGallery) {
+        if (showGallery || showPlan || showMap) {
             setTimeout(() => {
                 dialogRef.current?.showModal();
-                console.log("Gallery is open");
-            }, 100);
-        } else {
-            dialogRef.current?.close();
+            }, 50);
+
+
+
         }
-    }, [showGallery, dialogRef]);
+    }, [showGallery, showPlan, showMap, dialogRef]);
 
     return (
         <dialog
-            className="gallery-modal backdrop:bg-black backdrop:opacity-90 mx-auto my-4 w-fit h-fit pb-15 bg-transparent overflow-hidden"
+            className="gallery-modal backdrop:bg-black backdrop:opacity-90 mx-auto my-4 w-[50rem] h-[30rem] p-0 bg-transparent overflow-hidden"
             ref={dialogRef}
         >
-            <img
-                className="max-w-full max-h-[80vh] object-contain block"
-                src={house.images ? house.images[0].url : '/images/placeholder.jpg'}
-                alt={`${house.type} i ${house.city}`}
-            />
-          
+            <button className="fixed top-2 right-3 text-white text-4xl" aria-label="Close dialog" onClick={() => {
+                dialogRef.current?.close()
+                navigate("#")
+            }}>&times;</button>
+            {showGallery ? (
+                <FlickityTest house={house} />
+            ) : showPlan ? (
+                <img src={house.floorplan && house.floorplan.url ? house.floorplan.url : "/images/placeholder.jpg"} />
+            ) : showMap ? (
+                <img src="/src/assets/house_lokation.png" />
+            ) : (
+                <img src="/src/assets/house_lokation.png" />
+            )}
+
+
+
+
             <div className="flex gap-4 justify-center mt-4">
-                <Link to="?gallery=true">
+                <Link to="?modal=galleri">
                     <img src={gallery_icon} className="w-10 h-10" alt="Gallery" />
                 </Link>
-                <img src={plantegning_icon} className="w-10 h-10" alt="Plantegning" />
-                <img src={map_icon} className="w-10 h-10" alt="lokation" />
+                <Link to="?modal=plantegning">
+                    <img src={plantegning_icon} className="w-10 h-10" alt="Plantegning" />
+                </Link>
+                <Link to="?modal=kort">
+                    <img src={map_icon} className="w-10 h-10" alt="lokation" />
+                </Link>
                 <img src={favorite_icon} className="w-10 h-10" alt="Favorite" />
             </div>
-
         </dialog>
     );
 }

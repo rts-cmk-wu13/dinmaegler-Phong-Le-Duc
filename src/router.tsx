@@ -35,7 +35,6 @@ const router = createBrowserRouter([
                 element: <DetailBolig />,
                 loader: HouseDetailLoader
             },
-
             {
                 path: 'list-maeglere',
                 element: <ListMaeglere />,
