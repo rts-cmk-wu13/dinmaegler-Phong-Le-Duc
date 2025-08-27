@@ -38,15 +38,27 @@
   filter: brightness(0) saturate(100%) invert(0);
 }
 
-.gallery-modal::backdrop {
+/* .gallery-modal::backdrop {
   backdrop-filter: blur(100px);
   background: rgba(0,0,0,0.8);
+} */
+
+/* DIALOG tailwind reset */
+@layer base {
+  dialog {
+all: revert
+  }
+dialog::backdrop {
+  all: revert;
+ }
 }
 
+.img-white {
+  filter: brightness(0) invert(1);
+}
+
+
 /* 
-
-
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

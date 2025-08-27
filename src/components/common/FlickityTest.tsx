@@ -16,9 +16,9 @@ export default function FlickityTest({ house }: { house: House }) {
 
     return (
         <>
-          
+
             <Flickity
-                className={'carousel w-3/5 mx-auto'}
+                className={'carousel'}
                 elementType={'div'}
                 options={flickityOptions}
                 disableImagesLoaded
@@ -26,7 +26,7 @@ export default function FlickityTest({ house }: { house: House }) {
                 static
             >
                 {house?.images?.map((image, index) => (
-                    <img key={index} src={image.url} alt={`House image ${index + 1}`} />
+                    <img className="max-w-full max-h-[70vh] object-contain block mx-auto" key={index} src={image.url} alt={`House image ${index + 1}`} />
                 ))}
 
             </Flickity>
